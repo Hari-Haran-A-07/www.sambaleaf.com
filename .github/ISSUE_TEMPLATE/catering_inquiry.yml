@@ -1,0 +1,10 @@
+﻿name: Catering Inquiry
+description: Bulk dum handi booking inquiry for Karur events
+labels: ["catering"]
+body:
+  - type: textarea
+    id: catering-details
+    attributes:
+      label: Event Date & Portions Required
+    validations:
+      required: true
