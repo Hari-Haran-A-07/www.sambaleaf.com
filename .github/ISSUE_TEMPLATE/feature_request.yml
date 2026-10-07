@@ -1,0 +1,10 @@
+﻿name: Feature request
+description: Suggest an idea or menu enhancement for SAMBALEAF
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: feature-desc
+    attributes:
+      label: Feature Description
+    validations:
+      required: true
