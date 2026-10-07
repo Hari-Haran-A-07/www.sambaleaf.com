@@ -1,0 +1,4 @@
+﻿/* GPU Particle Optimization */
+.will-change-transform {
+  will-change: transform, opacity;
+}
