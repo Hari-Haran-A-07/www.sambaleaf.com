@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import CinematicPreloader from '../components/CinematicPreloader';
 import Hero from '../components/Hero';
 import BrandIntro from '../components/BrandIntro';
+import LiveKitchenStatus from '../components/LiveKitchenStatus';
 import RiceStory from '../components/RiceStory';
 import DindigulWay from '../components/DindigulWay';
 import DumHandiSimulation from '../components/DumHandiSimulation';
@@ -37,6 +38,11 @@ export default function Home() {
 
         {/* 02. Four Dishes. One Tradition. */}
         <BrandIntro />
+
+        {/* Live Hearth & Dum Batch Monitor */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <LiveKitchenStatus />
+        </div>
 
         {/* 03. Seeraga Samba Heritage Story & Basmati vs Seeraga Samba Comparison */}
         <RiceStory />
