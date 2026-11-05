@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import CartDrawer from '../components/CartDrawer';
 import AdminDrawer from '../components/AdminDrawer';
 import StickyOrderBar from '../components/StickyOrderBar';
+import AmbientSoundscape from '../components/AmbientSoundscape';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -131,6 +132,7 @@ export default function RootLayout({
           <CartDrawer />
           <AdminDrawer />
           <StickyOrderBar />
+          <AmbientSoundscape />
         </StoreProvider>
       </body>
     </html>
