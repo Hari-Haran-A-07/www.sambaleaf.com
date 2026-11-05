@@ -32,6 +32,7 @@ import NutritionalInfoModal from '../components/NutritionalInfoModal';
 import AllergenMatrixModal from '../components/AllergenMatrixModal';
 import BiryaniGlossaryModal from '../components/BiryaniGlossaryModal';
 import KitchenTicketModal from '../components/KitchenTicketModal';
+import FeedbackModal from '../components/FeedbackModal';
 import PrintableMenuModal from '../components/PrintableMenuModal';
 import GiftCardModal from '../components/GiftCardModal';
 
@@ -85,6 +86,7 @@ export default function Home() {
               <AllergenMatrixModal />
               <BiryaniGlossaryModal />
               <KitchenTicketModal />
+              <FeedbackModal />
               <GiftCardModal />
             </div>
             <div>
