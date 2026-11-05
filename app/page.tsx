@@ -17,6 +17,7 @@ import CookingProcess from '../components/CookingProcess';
 import TastingNotes from '../components/TastingNotes';
 import KarurIdentity from '../components/KarurIdentity';
 import DeliveryRadiusChecker from '../components/DeliveryRadiusChecker';
+import FeastCalculator from '../components/FeastCalculator';
 import OrderBuilder from '../components/OrderBuilder';
 import CustomerReviews from '../components/CustomerReviews';
 import CustomerFAQ from '../components/CustomerFAQ';
@@ -96,6 +97,9 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 w-full">
           <DeliveryRadiusChecker />
         </div>
+
+        {/* 11B. Interactive Biryani & Feast Calculator */}
+        <FeastCalculator />
 
         {/* 12. Interactive Step-by-Step Order Builder & WhatsApp Dispatch */}
         <OrderBuilder />
