@@ -8,6 +8,7 @@ import CartDrawer from '../components/CartDrawer';
 import AdminDrawer from '../components/AdminDrawer';
 import StickyOrderBar from '../components/StickyOrderBar';
 import AmbientSoundscape from '../components/AmbientSoundscape';
+import { generateStructuredRestaurantJson } from '../lib/seoMetadata';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -95,23 +96,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FoodEstablishment',
-    name: 'SAMBALEAF',
-    image: 'https://sambaleaf.com/images/chicken-biryani.jpg',
-    description:
-      'Authentic Dindigul-style Seeraga Samba Biryani Cloud Kitchen in Karur, Tamil Nadu. Serving Chicken Biryani, Mutton Biryani, Onion Raitha, and Thalcha. 100% Halal.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Karur',
-      addressRegion: 'Tamil Nadu',
-      addressCountry: 'IN',
-    },
-    servesCuisine: ['Dindigul Biryani', 'South Indian', 'Tamil Nadu'],
-    priceRange: '₹₹',
-    hasMenu: 'https://sambaleaf.com#menu',
-  };
+  const jsonLd = generateStructuredRestaurantJson();
 
   return (
     <html
