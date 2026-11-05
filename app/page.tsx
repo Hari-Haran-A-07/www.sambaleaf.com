@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { initWebVitalsObserver } from '../lib/performance';
 import CinematicPreloader from '../components/CinematicPreloader';
 import Hero from '../components/Hero';
 import BrandIntro from '../components/BrandIntro';
@@ -38,6 +39,10 @@ import GiftCardModal from '../components/GiftCardModal';
 
 export default function Home() {
   const [preloaderDone, setPreloaderDone] = useState(false);
+
+  useEffect(() => {
+    initWebVitalsObserver();
+  }, []);
 
   return (
     <>
