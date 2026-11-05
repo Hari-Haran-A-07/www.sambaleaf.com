@@ -14,6 +14,7 @@ import Manifesto from '../components/Manifesto';
 import HalalSection from '../components/HalalSection';
 import KitchenStory from '../components/KitchenStory';
 import CookingProcess from '../components/CookingProcess';
+import SpiceProvenance from '../components/SpiceProvenance';
 import TastingNotes from '../components/TastingNotes';
 import BananaLeafGuide from '../components/BananaLeafGuide';
 import KarurIdentity from '../components/KarurIdentity';
@@ -85,6 +86,9 @@ export default function Home() {
 
         {/* 10. The 6-Step Dum Cooking Timeline */}
         <CookingProcess />
+
+        {/* 10B. Comprehensive Spice & Farm Provenance Explorer */}
+        <SpiceProvenance />
 
         {/* Tasting Notes & Banana Leaf Etiquette */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 w-full">
