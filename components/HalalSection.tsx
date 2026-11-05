@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import { ShieldCheck, HeartHandshake, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function HalalSection() {
   return (
@@ -82,8 +83,15 @@ export default function HalalSection() {
               </div>
             </div>
 
-            <div className="mt-8 p-4 rounded-sm bg-cream/5 border border-cream/10 text-xs font-mono text-cream/60">
-              Note: Prepared in strict accordance with the brand&apos;s Halal culinary guidelines.
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 p-4 rounded-sm bg-cream/5 border border-cream/10 text-xs font-mono text-cream/60">
+              <span>Prepared in strict accordance with Halal culinary guidelines.</span>
+              <Link
+                href="/halal"
+                className="text-gold-soft hover:underline font-semibold flex items-center gap-1.5"
+              >
+                <span>Read Full Sourcing Audit</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         </div>
