@@ -17,6 +17,7 @@ import TastingNotes from '../components/TastingNotes';
 import KarurIdentity from '../components/KarurIdentity';
 import DeliveryRadiusChecker from '../components/DeliveryRadiusChecker';
 import OrderBuilder from '../components/OrderBuilder';
+import CustomerReviews from '../components/CustomerReviews';
 import CustomerFAQ from '../components/CustomerFAQ';
 import CateringInquiryModal from '../components/CateringInquiryModal';
 import NutritionalInfoModal from '../components/NutritionalInfoModal';
@@ -92,6 +93,9 @@ export default function Home() {
 
         {/* 12. Interactive Step-by-Step Order Builder & WhatsApp Dispatch */}
         <OrderBuilder />
+
+        {/* 12B. Real Karur Customer Reviews & Social Proof */}
+        <CustomerReviews />
 
         {/* 13. Frequently Asked Questions */}
         <CustomerFAQ />
