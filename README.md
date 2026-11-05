@@ -15,20 +15,31 @@ SAMBALEAF is a luxury, cinematic, conversion-focused digital food brand for an a
 
 ---
 
-## ✨ Key Features
+## ✨ Key Features (v2.0)
 - **Cinematic Full-Screen Hero** with live rising steam particle simulation and ambient spotlights.
-- **Interactive Dum Biryani Handi Simulation** featuring:
-  - 5-second automatic live telemetry on load & refresh
-  - Procedural **Web Audio API** sound synthesis (gentle steam hiss & bubbling marinade)
-  - Interactive **Sealed Handi** mode (Atta dough seal + glowing charcoal embers) & **Internal X-Ray Cross-Section** view.
-- **Seeraga Samba vs. Basmati** interactive grain comparison.
-- **The Dindigul Way** 6-stage culinary craft journey.
-- **Expanding Horizontal Menu Cards** (Desktop) & tactile touch cards (Mobile).
-- **100% Halal Trust Section** with custom brass seal and sourcing guidelines.
-- **Karur Delivery Zone Coverage** map visual (Karur City, Pasupathipalem, Vengamedu, Thanthonimalai).
-- **Step-by-Step Order Builder** with 1-click WhatsApp order generation and confetti celebration.
-- **Client Kitchen CMS Drawer** for live testing of dish availability, pricing, and operating status (*Serving Karur / Pre-orders Only / Sold Out*).
-- **Mobile First Experience** with bottom sticky ordering bar and sliding bag drawer.
+- **Dedicated Multi-Page Portals**:
+  - `/track`: Real-time order progress timeline from copper handi seal to doorstep delivery.
+  - `/heritage`: Deep-dive into Cauvery basin Seeraga Samba grain biology and history.
+  - `/sustainability`: Eco-packaging, plantain leaf polyphenols, and Karur clay handi return loop.
+  - `/halal`: 100% Zabiha Halal sourcing audit, Muslim butcher protocol, and alcohol-free kitchen guarantee.
+  - `/catering`: Wedding, corporate, and family feast booking calculator.
+- **REST API Route Handlers**: `/api/menu`, `/api/status`, `/api/orders`, `/api/reviews`.
+- **Live Hearth & Batch Monitor**: Real-time batch indicators, remaining yield, and Ustad tasting notes.
+- **Custom Handi Feast Box Configurator**: Combo builder with starters, desserts, and instant cart integration.
+- **Interactive Dum Biryani Handi Simulation** featuring Web Audio API sound synthesis.
+- **Feast & Bulk Portion Calculator**: Precise raw rice kg, raitha litres, and leaf count planner.
+- **Banana Leaf Dining Ritual Interactive Guide**: Sacred 5-step Tamil traditional dining etiquette.
+- **Native Terroir & Spice Provenance Explorer**: Transparent sourcing of Ramnad Mundu chillies, Kangeyam ghee, etc.
+- **Royal Dum Club VIP Pass**: Tiered rewards (Bronze, Silver, Gold Ustad), points calculator, and digital pass.
+- **Digital Feast Gift Cards**: Denomination vouchers with WhatsApp celebration sharing.
+- **Karur Neighborhood Pickup Hub Directory**: Opening hours, contact lines, and Google Maps directions.
+- **Allergen & Safety Matrix**: Complete dietary disclosures and cross-contamination guidelines.
+- **Keyboard-Navigable Menu Search**: `/` shortcut with instant query and category filtering.
+- **Promo Code Engine**: Validation for `SAMBAFIRST` (15% off) and `KARURFEAST` (₹100 off).
+- **Multi-Currency Converter**: Support for NRI patrons gifting from UAE (AED), USA (USD), Singapore (SGD), UK (GBP).
+- **Accessibility Controls (a11y)**: Font scaler (A, A+, A++), high contrast mode, and WCAG 2.1 compliance.
+- **Kitchen Order Ticket (KOT) Generator**: Printable 80mm thermal receipt format.
+- **Automated Test Suite**: 16 unit, integration, and pricing tests (`npm test`).
 
 ---
 
