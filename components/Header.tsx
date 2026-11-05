@@ -6,6 +6,7 @@ import { useStore } from '../lib/store';
 import { ShoppingBag, Menu, X, Sliders, ShieldCheck, Flame } from 'lucide-react';
 import RoyalClubModal from './RoyalClubModal';
 import StoreStatusBadge from './StoreStatusBadge';
+import CurrencySelector from './CurrencySelector';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -107,6 +108,11 @@ export default function Header() {
           >
             <Sliders className="w-4 h-4" />
           </button>
+
+          {/* NRI Multi-Currency Selector */}
+          <div className="hidden lg:block">
+            <CurrencySelector />
+          </div>
 
           {/* Bag / Cart Trigger */}
           <button
