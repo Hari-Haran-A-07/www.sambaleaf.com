@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { RICE_COMPARISON } from '../lib/data';
 import { Sparkles, Check, ArrowRight } from 'lucide-react';
 
@@ -153,6 +154,16 @@ export default function RiceStory() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="p-4 bg-charcoal-deep border-t border-cream/10 text-center">
+            <Link
+              href="/heritage"
+              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold hover:text-gold-light transition"
+            >
+              <span>Explore Complete Seeraga Samba History & Agricultural Preservation</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </div>
