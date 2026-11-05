@@ -9,6 +9,7 @@ import AdminDrawer from '../components/AdminDrawer';
 import StickyOrderBar from '../components/StickyOrderBar';
 import AmbientSoundscape from '../components/AmbientSoundscape';
 import AccessibilityControls from '../components/AccessibilityControls';
+import OfflineBanner from '../components/OfflineBanner';
 import { generateStructuredRestaurantJson } from '../lib/seoMetadata';
 
 const cormorant = Cormorant_Garamond({
@@ -111,6 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-charcoal-near text-cream font-body antialiased selection:bg-gold-soft selection:text-charcoal-near min-h-screen flex flex-col">
+        <OfflineBanner />
         <StoreProvider>
           <Header />
           <main className="flex-grow">{children}</main>
