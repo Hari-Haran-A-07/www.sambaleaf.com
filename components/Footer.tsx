@@ -85,6 +85,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/heritage" className="hover:text-gold-soft transition-colors">
+                  HERITAGE STORY
+                </Link>
+              </li>
+              <li>
+                <Link href="/sustainability" className="hover:text-gold-soft transition-colors">
+                  ECO COMMITMENT
+                </Link>
+              </li>
+              <li>
+                <Link href="/track" className="hover:text-gold-soft transition-colors">
+                  TRACK LIVE ORDER
+                </Link>
+              </li>
+              <li>
                 <Link href="#delivery" className="hover:text-gold-soft transition-colors">
                   KARUR DELIVERY
                 </Link>
