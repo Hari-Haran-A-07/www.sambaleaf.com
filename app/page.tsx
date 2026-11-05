@@ -10,6 +10,7 @@ import DindigulWay from '../components/DindigulWay';
 import DumHandiSimulation from '../components/DumHandiSimulation';
 import SignatureDishes from '../components/SignatureDishes';
 import FourDishMenu from '../components/FourDishMenu';
+import MenuSearchBar from '../components/MenuSearchBar';
 import ComboBuilder from '../components/ComboBuilder';
 import Manifesto from '../components/Manifesto';
 import HalalSection from '../components/HalalSection';
@@ -62,6 +63,9 @@ export default function Home() {
 
         {/* 05. Signature Chicken Biryani, Mutton Biryani, Onion Raitha & Thalcha Showcases */}
         <SignatureDishes />
+
+        {/* Quick Menu Search Bar with Keyboard Shortcut */}
+        <MenuSearchBar />
 
         {/* 06. The Four-Dish Curated Horizontal Card Menu */}
         <FourDishMenu />
