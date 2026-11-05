@@ -29,6 +29,7 @@ import CustomerFAQ from '../components/CustomerFAQ';
 import CateringInquiryModal from '../components/CateringInquiryModal';
 import NutritionalInfoModal from '../components/NutritionalInfoModal';
 import AllergenMatrixModal from '../components/AllergenMatrixModal';
+import BiryaniGlossaryModal from '../components/BiryaniGlossaryModal';
 import PrintableMenuModal from '../components/PrintableMenuModal';
 import GiftCardModal from '../components/GiftCardModal';
 
@@ -80,6 +81,7 @@ export default function Home() {
               <CateringInquiryModal />
               <NutritionalInfoModal />
               <AllergenMatrixModal />
+              <BiryaniGlossaryModal />
               <GiftCardModal />
             </div>
             <div>
