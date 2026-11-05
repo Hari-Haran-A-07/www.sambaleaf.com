@@ -15,6 +15,7 @@ import HalalSection from '../components/HalalSection';
 import KitchenStory from '../components/KitchenStory';
 import CookingProcess from '../components/CookingProcess';
 import TastingNotes from '../components/TastingNotes';
+import BananaLeafGuide from '../components/BananaLeafGuide';
 import KarurIdentity from '../components/KarurIdentity';
 import DeliveryRadiusChecker from '../components/DeliveryRadiusChecker';
 import FeastCalculator from '../components/FeastCalculator';
@@ -89,6 +90,9 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 w-full">
           <TastingNotes />
         </div>
+
+        {/* Banana Leaf Dining Ritual Guide */}
+        <BananaLeafGuide />
 
         {/* 11. Made for Karur Identity & Active Delivery Zones */}
         <KarurIdentity />
