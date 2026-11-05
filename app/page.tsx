@@ -19,6 +19,7 @@ import SpiceProvenance from '../components/SpiceProvenance';
 import TastingNotes from '../components/TastingNotes';
 import BananaLeafGuide from '../components/BananaLeafGuide';
 import KarurIdentity from '../components/KarurIdentity';
+import PickupLocations from '../components/PickupLocations';
 import DeliveryRadiusChecker from '../components/DeliveryRadiusChecker';
 import FeastCalculator from '../components/FeastCalculator';
 import OrderBuilder from '../components/OrderBuilder';
@@ -106,6 +107,9 @@ export default function Home() {
 
         {/* 11. Made for Karur Identity & Active Delivery Zones */}
         <KarurIdentity />
+
+        {/* 11B. Karur Local Area Hubs & Pickup Counter Visualizer */}
+        <PickupLocations />
 
         {/* Karur Delivery Radius Checker */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 w-full">
