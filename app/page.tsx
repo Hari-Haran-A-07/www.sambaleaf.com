@@ -10,6 +10,7 @@ import DindigulWay from '../components/DindigulWay';
 import DumHandiSimulation from '../components/DumHandiSimulation';
 import SignatureDishes from '../components/SignatureDishes';
 import FourDishMenu from '../components/FourDishMenu';
+import ComboBuilder from '../components/ComboBuilder';
 import Manifesto from '../components/Manifesto';
 import HalalSection from '../components/HalalSection';
 import KitchenStory from '../components/KitchenStory';
@@ -61,6 +62,9 @@ export default function Home() {
 
         {/* 06. The Four-Dish Curated Horizontal Card Menu */}
         <FourDishMenu />
+
+        {/* 06B. Interactive Custom Handi Feast Box Builder */}
+        <ComboBuilder />
 
         {/* Quick Utility Actions Bar (Catering, Nutritional, Printable Menu) */}
         <div className="py-8 bg-charcoal-deep border-y border-cream/10">
