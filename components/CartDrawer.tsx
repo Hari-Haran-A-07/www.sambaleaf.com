@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useStore } from '../lib/store';
-import { X, Plus, Minus, Trash2, Send, ShoppingBag, ShieldCheck } from 'lucide-react';
+import { X, Plus, Minus, Trash2, Send, ShoppingBag, ShieldCheck, Tag, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { validateCoupon } from '../lib/coupons';
+import { formatINR } from '../lib/formatters';
 
 export default function CartDrawer() {
   const {
@@ -17,6 +19,23 @@ export default function CartDrawer() {
     cartTotal,
     cartCount,
   } = useStore();
+
+  const [couponCode, setCouponCode] = useState('');
+  const [couponDiscount, setCouponDiscount] = useState(0);
+  const [couponMsg, setCouponMsg] = useState<{ text: string; success: boolean } | null>(null);
+
+  const handleApplyCoupon = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!couponCode) return;
+    const res = validateCoupon(couponCode, cartTotal);
+    if (res.valid) {
+      setCouponDiscount(res.discount);
+      setCouponMsg({ text: res.message, success: true });
+    } else {
+      setCouponDiscount(0);
+      setCouponMsg({ text: res.message, success: false });
+    }
+  };
 
   if (!isCartOpen) return null;
 
@@ -153,6 +172,51 @@ export default function CartDrawer() {
           {/* Footer & Checkout */}
           {cart.length > 0 && (
             <div className="p-6 border-t border-cream/10 bg-charcoal-near/90 space-y-4">
+              {/* Promo Code Form */}
+              <form onSubmit={handleApplyCoupon} className="space-y-1.5">
+                <div className="flex gap-2">
+                  <div className="relative flex-1">
+                    <Tag className="w-3.5 h-3.5 text-gold absolute left-3 top-3" />
+                    <input
+                      type="text"
+                      placeholder="Promo Code (e.g. SAMBAFIRST)"
+                      value={couponCode}
+                      onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                      className="w-full bg-charcoal-deep border border-cream/20 rounded-lg pl-9 pr-3 py-2 text-xs text-cream uppercase placeholder-cream/40 focus:outline-none focus:border-gold"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-3.5 py-2 rounded-lg bg-gold/20 hover:bg-gold/30 text-gold border border-gold/40 text-xs font-semibold transition"
+                  >
+                    Apply
+                  </button>
+                </div>
+                {couponMsg && (
+                  <p className={`text-[11px] ${couponMsg.success ? 'text-emerald-400' : 'text-red-400'}`}>
+                    {couponMsg.text}
+                  </p>
+                )}
+              </form>
+
+              {/* Price Breakdown */}
+              <div className="space-y-1 text-xs border-y border-cream/10 py-3">
+                <div className="flex justify-between text-cream/70">
+                  <span>Subtotal</span>
+                  <span>{formatINR(cartTotal)}</span>
+                </div>
+                {couponDiscount > 0 && (
+                  <div className="flex justify-between text-emerald-400 font-semibold">
+                    <span>Discount</span>
+                    <span>-{formatINR(couponDiscount)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between text-sm font-bold text-gold pt-1">
+                  <span>Estimated Total</span>
+                  <span>{formatINR(Math.max(0, cartTotal - couponDiscount))}</span>
+                </div>
+              </div>
+
               <div className="flex items-center justify-between text-xs font-mono text-cream/60">
                 <div className="flex items-center space-x-1.5 text-gold-soft">
                   <ShieldCheck className="w-4 h-4" />
