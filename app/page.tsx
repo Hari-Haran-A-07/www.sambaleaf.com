@@ -27,6 +27,7 @@ import CustomerFAQ from '../components/CustomerFAQ';
 import CateringInquiryModal from '../components/CateringInquiryModal';
 import NutritionalInfoModal from '../components/NutritionalInfoModal';
 import PrintableMenuModal from '../components/PrintableMenuModal';
+import GiftCardModal from '../components/GiftCardModal';
 
 export default function Home() {
   const [preloaderDone, setPreloaderDone] = useState(false);
@@ -72,6 +73,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-3">
               <CateringInquiryModal />
               <NutritionalInfoModal />
+              <GiftCardModal />
             </div>
             <div>
               <PrintableMenuModal />
