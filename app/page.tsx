@@ -19,6 +19,7 @@ import CookingProcess from '../components/CookingProcess';
 import SpiceProvenance from '../components/SpiceProvenance';
 import TastingNotes from '../components/TastingNotes';
 import BananaLeafGuide from '../components/BananaLeafGuide';
+import CulinaryPairings from '../components/CulinaryPairings';
 import KarurIdentity from '../components/KarurIdentity';
 import PickupLocations from '../components/PickupLocations';
 import DeliveryRadiusChecker from '../components/DeliveryRadiusChecker';
@@ -112,6 +113,9 @@ export default function Home() {
 
         {/* Banana Leaf Dining Ritual Guide */}
         <BananaLeafGuide />
+
+        {/* 10C. Traditional Culinary Beverage & Digestive Pairings */}
+        <CulinaryPairings />
 
         {/* 11. Made for Karur Identity & Active Delivery Zones */}
         <KarurIdentity />
