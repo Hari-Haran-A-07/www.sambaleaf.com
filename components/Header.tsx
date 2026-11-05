@@ -31,6 +31,7 @@ export default function Header() {
     { name: 'THE PROCESS', href: '#process' },
     { name: 'HALAL', href: '#halal' },
     { name: 'DELIVERY', href: '#delivery' },
+    { name: 'TRACK ORDER', href: '/track' },
     { name: 'CONTACT', href: '#contact' },
   ];
 
