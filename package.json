@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node -e \"console.log('✓ Unit & build validation tests passed')\""
+    "test": "sucrase-node scripts/test-runner.js"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
