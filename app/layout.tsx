@@ -8,6 +8,7 @@ import CartDrawer from '../components/CartDrawer';
 import AdminDrawer from '../components/AdminDrawer';
 import StickyOrderBar from '../components/StickyOrderBar';
 import AmbientSoundscape from '../components/AmbientSoundscape';
+import AccessibilityControls from '../components/AccessibilityControls';
 import { generateStructuredRestaurantJson } from '../lib/seoMetadata';
 
 const cormorant = Cormorant_Garamond({
@@ -118,6 +119,7 @@ export default function RootLayout({
           <AdminDrawer />
           <StickyOrderBar />
           <AmbientSoundscape />
+          <AccessibilityControls />
         </StoreProvider>
       </body>
     </html>
