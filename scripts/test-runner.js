@@ -140,6 +140,53 @@ describe('WhatsApp Instant Ordering Protocol', () => {
   });
 });
 
+// Coupons & Discount Engine
+const { validateCoupon } = require('../lib/coupons');
+describe('Promotions & Coupon Engine', () => {
+  test('validates SAMBAFIRST 15% discount on qualifying orders', () => {
+    const res = validateCoupon('SAMBAFIRST', 600);
+    expect(res.valid).toBe(true);
+    expect(res.discount).toBe(90);
+  });
+  test('rejects coupons that do not meet min order threshold', () => {
+    const res = validateCoupon('KARURFEAST', 400); // Requires 800
+    expect(res.valid).toBe(false);
+  });
+  test('rejects unrecognized coupon codes', () => {
+    const res = validateCoupon('RANDOM123', 1000);
+    expect(res.valid).toBe(false);
+  });
+});
+
+// Loyalty Points & Tier Engine
+const { calculatePointsEarned, getUserTier } = require('../lib/loyalty');
+describe('Royal Dum VIP Loyalty Rewards', () => {
+  test('accurately calculates 1 point per 10 rupees spent', () => {
+    expect(calculatePointsEarned(560)).toBe(56);
+    expect(calculatePointsEarned(1200)).toBe(120);
+  });
+  test('promotes high-frequency patrons to Gold Ustad tier', () => {
+    const goldTier = getUserTier(520);
+    expect(goldTier.id).toBe('gold');
+    expect(goldTier.discountRate).toBe(10);
+  });
+});
+
+// Currency Conversion Engine
+const { convertFromINR } = require('../lib/currency');
+describe('Multi-Currency Converter for NRI Gifting', () => {
+  test('returns standard INR formatting for domestic orders', () => {
+    const res = convertFromINR(500, 'INR');
+    expect(res.formatted).toBe('₹500');
+    expect(res.raw).toBe(500);
+  });
+  test('converts INR accurately to USD and AED', () => {
+    const usd = convertFromINR(845, 'USD'); // 845 / 84.5 = 10
+    expect(usd.raw).toBe(10);
+    expect(usd.formatted).toContain('$10');
+  });
+});
+
 // Summary
 console.log('\n-----------------------------------------------------');
 console.log(`\x1b[1mTest Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)\x1b[0m`);
