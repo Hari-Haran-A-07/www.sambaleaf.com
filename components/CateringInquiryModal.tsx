@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 import React, { useState } from "react";
-import { Users, Send, X, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { Users, Send, X, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function CateringInquiryModal() {
   const [open, setOpen] = useState(false);
@@ -69,6 +70,17 @@ export default function CateringInquiryModal() {
                   <Send className="w-3.5 h-3.5" />
                   <span>SEND INQUIRY</span>
                 </button>
+              </div>
+
+              <div className="pt-2 text-center">
+                <Link
+                  href="/catering"
+                  onClick={() => setOpen(false)}
+                  className="text-[11px] font-mono text-gold-soft hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Explore All Catering Menus & Live Price Calculator</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
               </div>
             </form>
           </div>
