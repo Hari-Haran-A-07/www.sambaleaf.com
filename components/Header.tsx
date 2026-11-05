@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useStore } from '../lib/store';
 import { ShoppingBag, Menu, X, Sliders, ShieldCheck, Flame } from 'lucide-react';
+import RoyalClubModal from './RoyalClubModal';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -94,6 +95,11 @@ export default function Header() {
             <span className="text-[10px] tracking-[0.16em] uppercase font-mono text-cream/90 font-medium">
               {kitchenSettings.statusText}
             </span>
+          </div>
+
+          {/* Royal Dum VIP Club Modal Trigger */}
+          <div className="hidden sm:block">
+            <RoyalClubModal />
           </div>
 
           {/* Quick CMS / Admin Demo Trigger */}
