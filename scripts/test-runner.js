@@ -234,6 +234,33 @@ describe('Nutritional Intelligence & Calorie Engine', () => {
   });
 });
 
+// Analytics & Event Telemetry Engine
+const { trackEvent, getBufferedEvents, clearBufferedEvents } = require('../lib/analytics');
+describe('Client Telemetry & Privacy Event Engine', () => {
+  test('dispatches and records events into in-memory buffer', () => {
+    clearBufferedEvents();
+    trackEvent('view_dish', { dishId: 'chicken-biryani', price: 280 });
+    const events = getBufferedEvents();
+    expect(events.length).toBe(1);
+    expect(events[0].type).toBe('view_dish');
+  });
+  test('strips PII fields from tracking payload to protect patron privacy', () => {
+    clearBufferedEvents();
+    trackEvent('initiate_whatsapp_order', {
+      orderId: 'SB-1001',
+      customerPhone: '9876543210',
+      deliveryAddress: '42 Kovai Road',
+      dishCount: 3
+    });
+    const events = getBufferedEvents();
+    expect(events.length).toBe(1);
+    expect(events[0].payload.orderId).toBe('SB-1001');
+    expect(events[0].payload.dishCount).toBe(3);
+    expect(events[0].payload.customerPhone).toBeUndefined();
+    expect(events[0].payload.deliveryAddress).toBeUndefined();
+  });
+});
+
 // Summary
 console.log('\n-----------------------------------------------------');
 console.log(`\x1b[1mTest Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)\x1b[0m`);
