@@ -187,6 +187,31 @@ describe('Multi-Currency Converter for NRI Gifting', () => {
   });
 });
 
+// Karur Delivery Radius & Zone Engine
+const { getDeliveryZone, isWithinDeliveryCoverage, calculateDeliveryFee } = require('../lib/deliveryZones');
+describe('Karur Hyperlocal Delivery Engine', () => {
+  test('identifies central Karur postal zones correctly', () => {
+    const zone = getDeliveryZone('639002');
+    expect(zone !== null).toBe(true);
+    expect(zone.hub).toContain('Kovai Road');
+  });
+  test('returns zero delivery fee when order exceeds zone threshold', () => {
+    const calc = calculateDeliveryFee('639004', 600); // threshold is 500
+    expect(calc.isFree).toBe(true);
+    expect(calc.fee).toBe(0);
+  });
+  test('applies appropriate transit fee when under threshold', () => {
+    const calc = calculateDeliveryFee('639005', 300); // threshold is 600, fee 30
+    expect(calc.isFree).toBe(false);
+    expect(calc.fee).toBe(30);
+    expect(calc.remainingForFree).toBe(300);
+  });
+  test('correctly flags unserviced pincodes', () => {
+    expect(isWithinDeliveryCoverage('999999')).toBe(false);
+    expect(getDeliveryZone('999999')).toBe(null);
+  });
+});
+
 // Summary
 console.log('\n-----------------------------------------------------');
 console.log(`\x1b[1mTest Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)\x1b[0m`);
