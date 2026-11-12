@@ -14,6 +14,64 @@ export const DEFAULT_SEO: SeoConfig = {
   locale: 'en_IN'
 };
 
+export function buildPageMetadata({
+  title,
+  description,
+  path = '',
+  ogImage = DEFAULT_SEO.ogImage
+}: {
+  title?: string;
+  description?: string;
+  path?: string;
+  ogImage?: string;
+} = {}) {
+  const pageTitle = title ? `${title} | SAMBALEAF Karur` : DEFAULT_SEO.title;
+  const pageDescription = description || DEFAULT_SEO.description;
+  const url = `${DEFAULT_SEO.canonicalUrl}${path.startsWith('/') ? path : `/${path}`}`;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    alternates: {
+      canonical: url
+    },
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url,
+      siteName: 'SAMBALEAF Karur',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: 'SAMBALEAF Traditional Dindigul Woodfire Dum Biryani'
+        }
+      ],
+      locale: DEFAULT_SEO.locale,
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: pageDescription,
+      images: [ogImage],
+      creator: '@sambaleaf'
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1
+      }
+    }
+  };
+}
+
 export function generateStructuredRestaurantJson() {
   return {
     '@context': 'https://schema.org',
