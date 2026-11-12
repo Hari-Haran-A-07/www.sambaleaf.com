@@ -15,15 +15,19 @@ SAMBALEAF is a luxury, cinematic, conversion-focused digital food brand for an a
 
 ---
 
-## ✨ Key Features (v2.0)
+## ✨ Key Features (v2.1)
 - **Cinematic Full-Screen Hero** with live rising steam particle simulation and ambient spotlights.
+- **System Health & Diagnostic API** (`/api/health`) for runtime telemetry, uptime, and memory usage.
+- **REST API Suite & Specs**: Detailed contracts for `/api/menu`, `/api/status`, `/api/orders`, `/api/reviews`, and `/api/health` documented in [`docs/API_DOCUMENTATION.md`](docs/API_DOCUMENTATION.md).
+- **Nutritional & Calorie Intelligence**: Comprehensive macro profiles for Seeraga Samba vs Basmati rice and meal calorie calculator.
+- **Traditional Handi Reheating Guide**: Preserves moisture via authentic indirect tawa dum, idli steam bath, and microwave techniques.
+- **Privacy-Conscious Telemetry**: Zero-cookie client interaction logging with automatic PII sanitization.
 - **Dedicated Multi-Page Portals**:
   - `/track`: Real-time order progress timeline from copper handi seal to doorstep delivery.
   - `/heritage`: Deep-dive into Cauvery basin Seeraga Samba grain biology and history.
   - `/sustainability`: Eco-packaging, plantain leaf polyphenols, and Karur clay handi return loop.
   - `/halal`: 100% Zabiha Halal sourcing audit, Muslim butcher protocol, and alcohol-free kitchen guarantee.
   - `/catering`: Wedding, corporate, and family feast booking calculator.
-- **REST API Route Handlers**: `/api/menu`, `/api/status`, `/api/orders`, `/api/reviews`.
 - **Live Hearth & Batch Monitor**: Real-time batch indicators, remaining yield, and Ustad tasting notes.
 - **Custom Handi Feast Box Configurator**: Combo builder with starters, desserts, and instant cart integration.
 - **Interactive Dum Biryani Handi Simulation** featuring Web Audio API sound synthesis.
@@ -39,7 +43,7 @@ SAMBALEAF is a luxury, cinematic, conversion-focused digital food brand for an a
 - **Multi-Currency Converter**: Support for NRI patrons gifting from UAE (AED), USA (USD), Singapore (SGD), UK (GBP).
 - **Accessibility Controls (a11y)**: Font scaler (A, A+, A++), high contrast mode, and WCAG 2.1 compliance.
 - **Kitchen Order Ticket (KOT) Generator**: Printable 80mm thermal receipt format.
-- **Automated Test Suite**: 16 unit, integration, and pricing tests (`npm test`).
+- **Automated Test Suite**: 28 comprehensive unit, integration, and pricing tests (`npm test`).
 
 ---
 

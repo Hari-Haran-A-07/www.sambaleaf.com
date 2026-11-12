@@ -1,6 +1,19 @@
 # Changelog
 All notable changes to SAMBALEAF are documented in this file.
 
+## [2.1.0] - 2026-11-12 — Diagnostics, Telemetry, and Kitchen Intelligence Suite
+### Added
+- **Health & Diagnostic Route (`/api/health`)**: Process uptime, Node.js memory footprint, and sub-service heartbeat checks.
+- **Karur Delivery Zones Engine (`lib/deliveryZones.ts`)**: Modular delivery coverage checks and free threshold calculations.
+- **Nutritional & Calorie Intelligence (`lib/nutrition.ts`)**: Seeraga Samba grain macros, low-GI analysis, and meal portion calorie calculator.
+- **Traditional Handi Reheating Guide (`lib/reheatingGuide.ts`)**: Authentic tawa dum, bamboo steam bath, and microwave revival instructions.
+- **Privacy-Conscious Telemetry (`lib/analytics.ts`)**: PII-scrubbed client event logging and conversion tracking.
+- **Web Share & Clipboard Utility (`lib/share.ts`)**: Native mobile sharing with WhatsApp and clipboard fallbacks.
+- **Resilient Client Storage (`lib/storage.ts`)**: SSR-safe localStorage wrapper with TTL expiration and memory fallback.
+- **REST API Specifications (`docs/API_DOCUMENTATION.md`)**: Comprehensive request/response schema documentation.
+- **Expanded Test Coverage**: Automated test suites for delivery zones, nutrition calculations, privacy analytics, and storage fallbacks (28 passing tests).
+- **XML Dynamic Sitemap Update**: Added dedicated entries for `/catering`, `/halal`, `/heritage`, `/sustainability`, and `/track`.
+
 ## [2.0.0] - 2026-11-05 — The Complete Production Heritage Suite
 ### Added
 - **Automated Test Runner**: In-house universal test harness covering formatters, menu data, validation, and coupons.
