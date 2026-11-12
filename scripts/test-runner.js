@@ -261,6 +261,28 @@ describe('Client Telemetry & Privacy Event Engine', () => {
   });
 });
 
+// Resilient Client Storage & Expiry Engine
+const { setStoredItem, getStoredItem, removeStoredItem } = require('../lib/storage');
+describe('Client Resilience & TTL Storage Engine', () => {
+  test('persists and retrieves arbitrary JSON data with fallback', () => {
+    const key = 'test_item_sample';
+    setStoredItem(key, { flavor: 'seeraga-samba', spiced: true });
+    const val = getStoredItem(key, null);
+    expect(val !== null).toBe(true);
+    expect(val.flavor).toBe('seeraga-samba');
+    expect(val.spiced).toBe(true);
+  });
+  test('returns defaultValue when key is missing or evicted', () => {
+    const missing = getStoredItem('non_existent_key_99', 'default_leaf');
+    expect(missing).toBe('default_leaf');
+  });
+  test('removes item completely upon removeStoredItem call', () => {
+    setStoredItem('temp_to_delete', 12345);
+    removeStoredItem('temp_to_delete');
+    expect(getStoredItem('temp_to_delete', -1)).toBe(-1);
+  });
+});
+
 // Summary
 console.log('\n-----------------------------------------------------');
 console.log(`\x1b[1mTest Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)\x1b[0m`);
