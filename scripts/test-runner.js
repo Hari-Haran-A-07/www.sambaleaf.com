@@ -212,6 +212,28 @@ describe('Karur Hyperlocal Delivery Engine', () => {
   });
 });
 
+// Nutritional Data & Macronutrient Engine
+const { DISH_NUTRITION, calculateMealNutrition } = require('../lib/nutrition');
+describe('Nutritional Intelligence & Calorie Engine', () => {
+  test('contains valid nutritional profiles for all core signature dishes', () => {
+    expect(DISH_NUTRITION['chicken-biryani'].calories).toBe(680);
+    expect(DISH_NUTRITION['chicken-biryani'].proteinGrams).toBe(36);
+    expect(DISH_NUTRITION['mutton-biryani'].calories).toBe(780);
+  });
+  test('accurately calculates composite meal calories and proteins', () => {
+    const meal = calculateMealNutrition([
+      { dishId: 'chicken-biryani', quantity: 2 },
+      { dishId: 'onion-raitha', quantity: 1 }
+    ]);
+    expect(meal.totalCalories).toBe(680 * 2 + 75);
+    expect(meal.totalProtein).toBe(36 * 2 + 4.2);
+  });
+  test('returns zero totals for empty or zero-quantity orders', () => {
+    const emptyMeal = calculateMealNutrition([{ dishId: 'chicken-biryani', quantity: 0 }]);
+    expect(emptyMeal.totalCalories).toBe(0);
+  });
+});
+
 // Summary
 console.log('\n-----------------------------------------------------');
 console.log(`\x1b[1mTest Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)\x1b[0m`);
