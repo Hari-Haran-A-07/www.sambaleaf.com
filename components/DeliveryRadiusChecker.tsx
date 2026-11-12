@@ -3,58 +3,9 @@
 import React, { useState } from 'react';
 import { MapPin, CheckCircle, Clock, Truck, ShieldCheck, AlertCircle } from 'lucide-react';
 import { formatINR } from '../lib/formatters';
+import { KARUR_ZONES, getDeliveryZone, ZoneDetail } from '../lib/deliveryZones';
 
-interface ZoneDetail {
-  pincode: string;
-  area: string;
-  timeEstimate: string;
-  deliveryFee: number;
-  freeDeliveryThreshold: number;
-  hub: string;
-}
-
-const ZONES: Record<string, ZoneDetail> = {
-  '639001': {
-    pincode: '639001',
-    area: 'Jawahar Bazaar, Old Bus Stand, Light House, Karur Town',
-    timeEstimate: '15–20 Mins',
-    deliveryFee: 0,
-    freeDeliveryThreshold: 280,
-    hub: 'Central Express Counter'
-  },
-  '639002': {
-    pincode: '639002',
-    area: 'Kovai Road, Sengunthapuram, Gandhigramam',
-    timeEstimate: '15–25 Mins',
-    deliveryFee: 0,
-    freeDeliveryThreshold: 280,
-    hub: 'Kovai Road Woodfire Hearth'
-  },
-  '639004': {
-    pincode: '639004',
-    area: 'Vengamedu, Pasupathipalem, Ramakrishnapuram',
-    timeEstimate: '20–30 Mins',
-    deliveryFee: 25,
-    freeDeliveryThreshold: 500,
-    hub: 'Northern Express Fleet'
-  },
-  '639005': {
-    pincode: '639005',
-    area: 'Thanthonimalai, Govt Arts College Road, Chettipalayam',
-    timeEstimate: '25–35 Mins',
-    deliveryFee: 30,
-    freeDeliveryThreshold: 600,
-    hub: 'Thanthonimalai Southern Cloud Hub'
-  },
-  '639006': {
-    pincode: '639006',
-    area: 'Sanapiratti, Rayanur, Athur bypass',
-    timeEstimate: '30–40 Mins',
-    deliveryFee: 40,
-    freeDeliveryThreshold: 700,
-    hub: 'Suburban Dispatch Partner'
-  }
-};
+const ZONES = KARUR_ZONES;
 
 export default function DeliveryRadiusChecker() {
   const [query, setQuery] = useState('');
